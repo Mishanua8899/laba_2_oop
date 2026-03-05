@@ -23,10 +23,9 @@ std::vector<double> ReadNumbers(std::istream& fIn)
 				nextNumber = std::stod(number);
 				result.push_back(nextNumber);
 			}
-			catch (std::exception& e)
+			catch (...)
 			{
-				std::cout << "ERROR" << std::endl;
-				std::exit(EXIT_SUCCESS);
+				throw std::runtime_error("Invalid input");
 			}
 		}
 	}

@@ -18,44 +18,29 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="catch-test_1.cpp">
+    <ClCompile Include="catch-test.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="tests.cpp">
+    <ClCompile Include="tests_1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="test_func_task1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="test_func_task2.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="test_func_task3.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="test_func_task4.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="catch-sample_1.h">
+    <ClInclude Include="catch-sample.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="test_func_task1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="test_func_task2.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="test_func_task3.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="test_func_task4.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="test_data_for_task3.txt">
+    <Text Include="output_test.txt">
+      <Filter>test_daata</Filter>
+    </Text>
+    <Text Include="output_test_2.txt">
       <Filter>test_daata</Filter>
     </Text>
   </ItemGroup>

@@ -7,13 +7,13 @@
 
 #include "task1.h"
 
-std::vector<double> ReadNumbers(std::istream& fIn)
+std::vector<double> ReadNumbers(std::istream& stream)
 {
 	std::vector<double> result;
 	std::string line;
 	std::string number;
 	double nextNumber = 0;
-	if (std::getline(fIn, line))
+	if (std::getline(stream, line))
 	{
 		std::stringstream lineStream(line);
 		while (lineStream >> number)
@@ -25,8 +25,7 @@ std::vector<double> ReadNumbers(std::istream& fIn)
 			}
 			catch (std::exception& e)
 			{
-				std::cout << "ERROR" << std::endl;
-				std::exit(EXIT_SUCCESS);
+				throw std::runtime_error("Invalid input");
 			}
 		}
 	}
@@ -43,7 +42,7 @@ std::vector<double> ProcessNumbers(std::vector<double>& setNumbers)
 	auto minNumIterator = std::min_element(setNumbers.begin(), setNumbers.end());
 	double minNum = *minNumIterator;
 	std::vector<double> result;
-	std::for_each(setNumbers.begin(), setNumbers.end(), [&](double& number)
+	std::for_each(setNumbers.begin(), setNumbers.end(), [&result, &minNum](double& number)
 	{
 		result.push_back(number * minNum);
 	});

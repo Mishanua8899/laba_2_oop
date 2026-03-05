@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e032f518-6b5e-4782-be10-b643ea1da398}</ProjectGuid>
-    <RootNamespace>catchtest1</RootNamespace>
+    <ProjectGuid>{114f3b84-36e6-45f1-9774-ed3581ef3377}</ProjectGuid>
+    <RootNamespace>catchtest2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -125,23 +125,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="catch-test.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="tests_1.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="test_func_task1.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="catch-sample.h" />
-    <ClInclude Include="test_func_task1.h" />
+    <ClInclude Include="test_func_task2.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="output_test.txt" />
-    <Text Include="output_test_2.txt" />
+    <ClCompile Include="catch-test.cpp" />
+    <ClCompile Include="tests_2.cpp" />
+    <ClCompile Include="test_func_task2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

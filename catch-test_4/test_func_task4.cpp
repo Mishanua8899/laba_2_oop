@@ -5,9 +5,16 @@
 #include <string>
 
 #include "test_func_task4.h"
-#include "test_func_task3.h"
 
-std::set<std::string> getBadWords(std::istream& fIn)
+
+std::string ToLowerCase(std::string word)
+{
+	std::transform(word.begin(), word.end(), word.begin(),
+		[](unsigned char c) { return std::tolower(c); });
+	return word;
+}
+
+std::set<std::string> GetBadWords(std::istream& fIn)
 {
 	std::set<std::string> BadWords;
 	std::string line;
@@ -17,13 +24,14 @@ std::set<std::string> getBadWords(std::istream& fIn)
 		std::string word;
 		while (lineStream >> word)
 		{
+			word = ToLowerCase(word);
 			BadWords.insert(word);
 		}
 	}
 	return BadWords;
 }
 
-std::string filterLine(std::string& line, const std::set<std::string>& BadWords)
+std::string FilterLine(std::string& line, const std::set<std::string>& BadWords)
 {
 	std::stringstream lineStream(line);
 	std::string word;
@@ -46,13 +54,13 @@ std::string filterLine(std::string& line, const std::set<std::string>& BadWords)
 	return filteredLine;
 }
 
-std::string filterText(std::istream& fIn, const std::set<std::string>& BadWords)
+std::string FilterText(std::istream& fIn, const std::set<std::string>& BadWords)
 {
 	std::string line;
 	std::string result;
 	while (std::getline(fIn, line))
 	{
-		std::string filteredLine = filterLine(line, BadWords);
+		std::string filteredLine = FilterLine(line, BadWords);
 		if (!filteredLine.empty()) {
 			result += filteredLine + "\n";
 		}

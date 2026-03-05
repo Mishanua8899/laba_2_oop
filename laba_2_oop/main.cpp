@@ -2,8 +2,17 @@
 
 int main()
 {
-    auto numbers = ReadNumbers(std::cin);
+    std::vector<double> numbers;
+    try 
+    {
+        numbers = ReadNumbers(std::cin);
+    }
+    catch (...)
+    {
+        std::cout << "ERROR" << std::endl;
+        return EXIT_SUCCESS;
+    }
     numbers = ProcessNumbers(numbers);
     PrintNumbers(numbers);
-    return 0;
+    return EXIT_SUCCESS;
 }
